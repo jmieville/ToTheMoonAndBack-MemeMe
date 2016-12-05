@@ -8,20 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		8B40916C1D0462460027B8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40916B1D0462460027B8D4 /* AppDelegate.swift */; };
-		8B40916E1D0462460027B8D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40916D1D0462460027B8D4 /* ViewController.swift */; };
+		8B40916E1D0462460027B8D4 /* MemeMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40916D1D0462460027B8D4 /* MemeMeViewController.swift */; };
 		8B4091711D0462460027B8D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B40916F1D0462460027B8D4 /* Main.storyboard */; };
 		8B4091731D0462460027B8D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4091721D0462460027B8D4 /* Assets.xcassets */; };
 		8B4091761D0462460027B8D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4091741D0462460027B8D4 /* LaunchScreen.storyboard */; };
+		8B4091801D049FB40027B8D4 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40917F1D049FB40027B8D4 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49902D641DF49391001FDF0B /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 		8B4091681D0462460027B8D4 /* memeMeV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memeMeV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B40916B1D0462460027B8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B40916D1D0462460027B8D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B40916D1D0462460027B8D4 /* MemeMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeViewController.swift; sourceTree = "<group>"; };
 		8B4091701D0462460027B8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B4091721D0462460027B8D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B4091751D0462460027B8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B4091771D0462460027B8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B40917F1D049FB40027B8D4 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +58,13 @@
 			isa = PBXGroup;
 			children = (
 				8B40916B1D0462460027B8D4 /* AppDelegate.swift */,
-				8B40916D1D0462460027B8D4 /* ViewController.swift */,
+				8B40916D1D0462460027B8D4 /* MemeMeViewController.swift */,
+				8B40917F1D049FB40027B8D4 /* Meme.swift */,
 				8B40916F1D0462460027B8D4 /* Main.storyboard */,
 				8B4091721D0462460027B8D4 /* Assets.xcassets */,
 				8B4091741D0462460027B8D4 /* LaunchScreen.storyboard */,
 				8B4091771D0462460027B8D4 /* Info.plist */,
+				49902D641DF49391001FDF0B /* impact.ttf */,
 			);
 			path = memeMeV2;
 			sourceTree = "<group>";
@@ -91,11 +96,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Jean-Marc Kampol Mieville";
 				TargetAttributes = {
 					8B4091671D0462460027B8D4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8GL695U4E9;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -135,7 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B40916E1D0462460027B8D4 /* ViewController.swift in Sources */,
+				8B4091801D049FB40027B8D4 /* Meme.swift in Sources */,
+				8B40916E1D0462460027B8D4 /* MemeMeViewController.swift in Sources */,
 				8B40916C1D0462460027B8D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,8 +184,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -222,8 +232,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -242,6 +254,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -251,10 +264,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8GL695U4E9;
 				INFOPLIST_FILE = memeMeV2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MievilleKampolJeanMarc.memeMeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -262,10 +278,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8GL695U4E9;
 				INFOPLIST_FILE = memeMeV2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MievilleKampolJeanMarc.memeMeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -288,6 +307,7 @@
 				8B40917C1D0462460027B8D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
