@@ -15,6 +15,12 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
     
+    var activeRow = -1
+    
+    @IBAction func cancelToTableView(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     let imagePicker = UIImagePickerController()
     
     func prepareTextField(textField: UITextField) {
@@ -62,7 +68,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.memes.append(self.meme)
-            
+            print("filed saved")
         } else {
         }
     }
@@ -80,6 +86,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
             (s: UIActivityType?, ok: Bool, items: [Any]?, err: Error?) -> Void in
             if ok {
                 self.save()
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
             } else {
                 activityViewController.dismiss(animated: true, completion: nil )
             }
@@ -115,14 +122,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         return memedImage
     }
     
-    // Set Original image
-    //var originalImage: UIImage?
-    /*
-    func setOriginalImage(pickedImage: UIImage) -> UIImage {
-        originalImage = pickedImage
-        return originalImage!
-    }
-    */
+
     
     // Image from Camera
     
@@ -188,6 +188,28 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         textField1.textAlignment = .center
         textField2.textAlignment = .center
         
+        
+        // if an image is being called for an edit, will show said image
+        
+        if activeRow >= 0 {
+            print("editing image")
+            textField1.text = String(memes[activeRow].top)
+            textField2.text = String(memes[activeRow].bottom)
+            imageToMeme.image = memes[activeRow].image
+            
+            
+            // enable to allow change when touch:
+            topTextField.isEnabled = true
+            bottomTextField.isEnabled = true
+            //topTextField.allowsEditingTextAttributes = true
+            //bottomTextField.allowsEditingTextAttributes = true
+            shareImageBtn.isEnabled = true
+            //saveOnlyTheMemeButton.enabled = true
+        } else {
+            //saveButton.enabled = false
+            //saveOnlyTheMemeButton.enabled = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -209,6 +231,9 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
+        
+       
     }
     
     override func viewWillDisappear(_ animated: Bool) {

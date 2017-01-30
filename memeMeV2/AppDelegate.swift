@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // memes as array in AppDelegate
     var memes = [Meme]()
+    
+    
 
 
 
