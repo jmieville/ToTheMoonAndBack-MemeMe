@@ -16,15 +16,12 @@ struct Meme {
     // memedImage with Image & Text
     var memedImage: UIImage!
     
-    
     // initialize for ViewController
     init(top: String, bottom: String, image: UIImage, memedImage: UIImage) {
         self.top = top
         self.bottom = bottom
         self.image = image
         self.memedImage = memedImage
-        
-        
     }
 }
 

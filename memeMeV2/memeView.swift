@@ -15,17 +15,12 @@ class memeView: UIViewController {
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
     var meme: Meme!
-    
     var activeRow = -1
-    
     
     @IBAction func editMeme(_ sender: Any) {
         openEditor()
-        //self.dismiss(animated: true, completion: nil)
         print("editBtn pressed")
-
     }
-    
     
     @IBAction func doneBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -37,35 +32,21 @@ class memeView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         memeImage.image = memes[activeRow].memedImage
         reloadInputViews()
-        
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        //memeImage.image = memeImage.image
-        //memeImage.image = memes[activeRow].memedImage
         navigationItem.title = "MemeMe Gallery"
-        //navigationItem.backBarButtonItem =
-        
     }
-    
     
     func openEditor(){
         print("This is the activeRow:\(activeRow)")
-
-        
         var controller: MemeMeViewController
         controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeMeViewController") as! MemeMeViewController
         controller.meme = self.meme
         controller.activeRow = self.activeRow
-        
         // Present the view Controller
         present(controller, animated: true, completion: nil)
         controller.navigationItem.hidesBackButton = true
-
- 
-
     }
-    
 }
